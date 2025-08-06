@@ -12,7 +12,9 @@ import {
   BriefcaseBusiness, // Icon for Business Visas
   GraduationCap, // Icon for Student Visas
   Globe, // Icon for Tourist Visas
-  LogOut
+  LogOut,
+  UserPlus, // Icon for Recruitment
+  Contact // Icon for Contacts
 } from 'lucide-react';
 import {
   Sidebar,
@@ -40,6 +42,15 @@ export function AppSidebar() {
     { title: t("settings"), url: "/settings", icon: Settings },
   ];
 
+  const employeeMenu = {
+    title: t("employees"),
+    icon: Users,
+    items: [
+      { title: t("employeeManagement"), url: "/employees", icon: Users },
+      { title: t("recruitment"), url: "/employees/recruitment", icon: UserPlus },
+    ]
+  };
+
   const visaMenu = {
     title: t("visaApplications"),
     icon: Plane,
@@ -49,6 +60,11 @@ export function AppSidebar() {
       { title: t("touristVisas"), url: "/visa-applications/tourist", icon: Globe },
     ]
   };
+
+  const additionalMenuItems = [
+    { title: t("inCountryCheck"), url: "/in-country-check", icon: UserCheck },
+    { title: t("contacts"), url: "/contacts", icon: Contact },
+  ];
 
   const isActive = (path: string) => currentPath === path;
   const getNavCls = ({ isActive }: { isActive: boolean }) =>
@@ -76,6 +92,7 @@ export function AppSidebar() {
           <SidebarGroupContent>
             <SidebarMenu>
               {menuItems.map((item) => (
+                <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
                     <NavLink 
                       to={item.url} 
@@ -90,43 +107,91 @@ export function AppSidebar() {
                       {!collapsed && <span>{item.title}</span>}
                     </NavLink>
                   </SidebarMenuButton>
+                </SidebarMenuItem>
               ))}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>        
-        {/* Added Modules Group */}
-        {/* Adjusted padding and removed unnecessary mt-auto as the logout button is now at the bottom */}
-        <div className="p-4 border-t border-embassy-blue/20">
-           <SidebarGroup>
-             <SidebarGroupLabel className=\"text-embassy-blue font-medium px-4 py-2\">
-               {!collapsed && "Modules"}
-             </SidebarGroupLabel>
-             <SidebarGroupContent>
-               <SidebarMenu>
-                <SidebarMenuItem>
-                  <SidebarMenuButton className={`flex items-center space-x-3 px-4 py-2 text-white transition-colors ${currentPath.startsWith("/visa-applications") ? "bg-embassy-blue text-white font-medium" : "hover:bg-embassy-blue/20"}`}>
-                     <visaMenu.icon className="h-5 w-5" />
-                     {!collapsed && <span>{visaMenu.title}</span>}
-                   </SidebarMenuButton>
-                   <SidebarGroupContent>
-                     {visaMenu.items.map((item) => (<SidebarMenuItem key={item.title}>
-                         <SidebarMenuButton asChild>
-                           <NavLink to={item.url} className={({ isActive }) => `flex items-center space-x-3 px-8 py-2 text-white transition-colors ${isActive ? "bg-embassy-blue text-white font-medium" : "hover:bg-embassy-blue/20"}`}>
-                             <item.icon className="h-4 w-4" />
-                             {!collapsed && <span>{item.title}</span>}
-                           </NavLink>
-                         </SidebarMenuButton>
-                       </SidebarMenuItem>))}
-                   </SidebarGroupContent>
+        
+        <SidebarGroup>
+          <SidebarGroupLabel className="text-embassy-blue font-medium px-4 py-2">
+            {!collapsed && "Modules"}
+          </SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {/* Employee Management */}
+              <SidebarMenuItem>
+                <SidebarMenuButton className={`flex items-center space-x-3 px-4 py-2 text-white transition-colors ${currentPath.startsWith("/employees") ? "bg-embassy-blue text-white font-medium" : "hover:bg-embassy-blue/20"}`}>
+                  <employeeMenu.icon className="h-5 w-5" />
+                  {!collapsed && <span>{employeeMenu.title}</span>}
+                </SidebarMenuButton>
+                {!collapsed && (
+                  <SidebarGroupContent>
+                    {employeeMenu.items.map((item) => (
+                      <SidebarMenuItem key={item.title}>
+                        <SidebarMenuButton asChild>
+                          <NavLink to={item.url} className={({ isActive }) => `flex items-center space-x-3 px-8 py-2 text-white transition-colors ${isActive ? "bg-embassy-blue text-white font-medium" : "hover:bg-embassy-blue/20"}`}>
+                            <item.icon className="h-4 w-4" />
+                            <span>{item.title}</span>
+                          </NavLink>
+                        </SidebarMenuButton>
+                      </SidebarMenuItem>
+                    ))}
+                  </SidebarGroupContent>
+                )}
+              </SidebarMenuItem>
+              
+              {/* Visa Applications */}
+              <SidebarMenuItem>
+                <SidebarMenuButton className={`flex items-center space-x-3 px-4 py-2 text-white transition-colors ${currentPath.startsWith("/visa-applications") ? "bg-embassy-blue text-white font-medium" : "hover:bg-embassy-blue/20"}`}>
+                  <visaMenu.icon className="h-5 w-5" />
+                  {!collapsed && <span>{visaMenu.title}</span>}
+                </SidebarMenuButton>
+                {!collapsed && (
+                  <SidebarGroupContent>
+                    {visaMenu.items.map((item) => (
+                      <SidebarMenuItem key={item.title}>
+                        <SidebarMenuButton asChild>
+                          <NavLink to={item.url} className={({ isActive }) => `flex items-center space-x-3 px-8 py-2 text-white transition-colors ${isActive ? "bg-embassy-blue text-white font-medium" : "hover:bg-embassy-blue/20"}`}>
+                            <item.icon className="h-4 w-4" />
+                            <span>{item.title}</span>
+                          </NavLink>
+                        </SidebarMenuButton>
+                      </SidebarMenuItem>
+                    ))}
+                  </SidebarGroupContent>
+                )}
+              </SidebarMenuItem>
+              
+              {/* Additional Menu Items */}
+              {additionalMenuItems.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton asChild>
+                    <NavLink 
+                      to={item.url} 
+                      className={({ isActive }) => 
+                        `flex items-center space-x-3 px-4 py-2 text-white transition-colors ${isActive 
+                            ? "bg-embassy-blue text-white font-medium"
+                            : "hover:bg-embassy-blue/20"
+                        }`
+                      }
+                    >
+                      <item.icon className="h-5 w-5" />                      
+                      {!collapsed && <span>{item.title}</span>}
+                    </NavLink>
+                  </SidebarMenuButton>
                 </SidebarMenuItem>
-               </SidebarMenu>
-             </SidebarGroupContent>
-           </SidebarGroup>
-          {/* Logout Button - Moved to the bottom */}
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+        
+        {/* Logout Button */}
+        <div className="mt-auto p-4 border-t border-embassy-blue/20">
           <SidebarMenuButton asChild>
-            <button className="flex items-center space-x-3 px-4 py-2 text-white hover:bg-embassy-blue/20 transition-colors w-full mt-4">
-              <LogOut className="h-5 w-5" /> {/* Use the LogOut icon */}
-              {!collapsed && <span>{t('logout')}</span>} {/* Display Logout text */}
+            <button className="flex items-center space-x-3 px-4 py-2 text-white hover:bg-embassy-blue/20 transition-colors w-full">
+              <LogOut className="h-5 w-5" />
+              {!collapsed && <span>{t('logout')}</span>}
             </button>
           </SidebarMenuButton>
         </div>

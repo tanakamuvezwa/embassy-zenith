@@ -75,7 +75,63 @@ const resources = {
       english: "English",
       spanish: "Spanish", 
       turkish: "Turkish",
-      french: "French"
+      french: "French",
+      
+      // Employees
+      employees: "Employees",
+      employeeManagement: "Employee Management",
+      addEmployee: "Add Employee",
+      employeeList: "Employee List",
+      position: "Position",
+      department: "Department",
+      hireDate: "Hire Date",
+      employeeId: "Employee ID",
+      
+      // Recruitment
+      recruitment: "Recruitment",
+      recruitmentManagement: "Recruitment Management",
+      addCandidate: "Add Candidate",
+      candidateList: "Candidate List",
+      candidate: "Candidate",
+      candidates: "Candidates",
+      applicationStatus: "Application Status",
+      interviewDate: "Interview Date",
+      
+      // In Country Check
+      inCountryCheck: "In Country Check",
+      inCountryCheckById: "In Country Check by ID",
+      individualId: "Individual ID",
+      nationality: "Nationality",
+      location: "Location",
+      checkStatus: "Check Status",
+      active: "Active",
+      inactive: "Inactive",
+      
+      // Visa Applications
+      visaApplications: "Visa Applications",
+      businessVisas: "Business Visas",
+      studentVisas: "Student Visas",
+      touristVisas: "Tourist Visas",
+      businessVisaApplications: "Business Visa Applications",
+      studentVisaApplications: "Student Visa Applications",
+      touristVisaApplications: "Tourist Visa Applications",
+      
+      // Contacts
+      contacts: "Contacts",
+      contactManagement: "Contact Management",
+      addContact: "Add Contact",
+      contactList: "Contact List",
+      phone: "Phone",
+      
+      // Common actions
+      filterByName: "Filter by Name",
+      filterById: "Filter by ID",
+      noDataFound: "No data found",
+      loading: "Loading...",
+      save: "Save",
+      cancel: "Cancel",
+      confirm: "Confirm",
+      close: "Close"
     }
   },
   es: {
@@ -150,7 +206,63 @@ const resources = {
       english: "Inglés",
       spanish: "Español",
       turkish: "Turco", 
-      french: "Francés"
+      french: "Francés",
+      
+      // Employees
+      employees: "Empleados",
+      employeeManagement: "Gestión de Empleados",
+      addEmployee: "Agregar Empleado",
+      employeeList: "Lista de Empleados",
+      position: "Posición",
+      department: "Departamento",
+      hireDate: "Fecha de Contratación",
+      employeeId: "ID de Empleado",
+      
+      // Recruitment
+      recruitment: "Reclutamiento",
+      recruitmentManagement: "Gestión de Reclutamiento",
+      addCandidate: "Agregar Candidato",
+      candidateList: "Lista de Candidatos",
+      candidate: "Candidato",
+      candidates: "Candidatos",
+      applicationStatus: "Estado de Solicitud",
+      interviewDate: "Fecha de Entrevista",
+      
+      // In Country Check
+      inCountryCheck: "Verificación en País",
+      inCountryCheckById: "Verificación en País por ID",
+      individualId: "ID Individual",
+      nationality: "Nacionalidad",
+      location: "Ubicación",
+      checkStatus: "Estado de Verificación",
+      active: "Activo",
+      inactive: "Inactivo",
+      
+      // Visa Applications
+      visaApplications: "Solicitudes de Visa",
+      businessVisas: "Visas de Negocios",
+      studentVisas: "Visas de Estudiante",
+      touristVisas: "Visas de Turista",
+      businessVisaApplications: "Solicitudes de Visa de Negocios",
+      studentVisaApplications: "Solicitudes de Visa de Estudiante",
+      touristVisaApplications: "Solicitudes de Visa de Turista",
+      
+      // Contacts
+      contacts: "Contactos",
+      contactManagement: "Gestión de Contactos",
+      addContact: "Agregar Contacto",
+      contactList: "Lista de Contactos",
+      phone: "Teléfono",
+      
+      // Common actions
+      filterByName: "Filtrar por Nombre",
+      filterById: "Filtrar por ID",
+      noDataFound: "No se encontraron datos",
+      loading: "Cargando...",
+      save: "Guardar",
+      cancel: "Cancelar",
+      confirm: "Confirmar",
+      close: "Cerrar"
     }
   },
   tr: {
@@ -225,7 +337,63 @@ const resources = {
       english: "İngilizce",
       spanish: "İspanyolca",
       turkish: "Türkçe",
-      french: "Fransızca"
+      french: "Fransızca",
+      
+      // Employees
+      employees: "Çalışanlar",
+      employeeManagement: "Çalışan Yönetimi",
+      addEmployee: "Çalışan Ekle",
+      employeeList: "Çalışan Listesi",
+      position: "Pozisyon",
+      department: "Departman",
+      hireDate: "İşe Alım Tarihi",
+      employeeId: "Çalışan ID",
+      
+      // Recruitment
+      recruitment: "İşe Alım",
+      recruitmentManagement: "İşe Alım Yönetimi",
+      addCandidate: "Aday Ekle",
+      candidateList: "Aday Listesi",
+      candidate: "Aday",
+      candidates: "Adaylar",
+      applicationStatus: "Başvuru Durumu",
+      interviewDate: "Mülakat Tarihi",
+      
+      // In Country Check
+      inCountryCheck: "Ülke İçi Kontrol",
+      inCountryCheckById: "ID ile Ülke İçi Kontrol",
+      individualId: "Kişi ID",
+      nationality: "Uyruk",
+      location: "Konum",
+      checkStatus: "Kontrol Durumu",
+      active: "Aktif",
+      inactive: "Pasif",
+      
+      // Visa Applications
+      visaApplications: "Vize Başvuruları",
+      businessVisas: "İş Vizeleri",
+      studentVisas: "Öğrenci Vizeleri",
+      touristVisas: "Turist Vizeleri",
+      businessVisaApplications: "İş Vizesi Başvuruları",
+      studentVisaApplications: "Öğrenci Vizesi Başvuruları",
+      touristVisaApplications: "Turist Vizesi Başvuruları",
+      
+      // Contacts
+      contacts: "Kişiler",
+      contactManagement: "Kişi Yönetimi",
+      addContact: "Kişi Ekle",
+      contactList: "Kişi Listesi",
+      phone: "Telefon",
+      
+      // Common actions
+      filterByName: "İsme Göre Filtrele",
+      filterById: "ID'ye Göre Filtrele",
+      noDataFound: "Veri bulunamadı",
+      loading: "Yükleniyor...",
+      save: "Kaydet",
+      cancel: "İptal",
+      confirm: "Onayla",
+      close: "Kapat"
     }
   },
   fr: {
@@ -300,7 +468,63 @@ const resources = {
       english: "Anglais",
       spanish: "Espagnol",
       turkish: "Turc",
-      french: "Français"
+      french: "Français",
+      
+      // Employees
+      employees: "Employés",
+      employeeManagement: "Gestion des Employés",
+      addEmployee: "Ajouter Employé",
+      employeeList: "Liste des Employés",
+      position: "Poste",
+      department: "Département",
+      hireDate: "Date d'Embauche",
+      employeeId: "ID Employé",
+      
+      // Recruitment
+      recruitment: "Recrutement",
+      recruitmentManagement: "Gestion du Recrutement",
+      addCandidate: "Ajouter Candidat",
+      candidateList: "Liste des Candidats",
+      candidate: "Candidat",
+      candidates: "Candidats",
+      applicationStatus: "Statut de Candidature",
+      interviewDate: "Date d'Entretien",
+      
+      // In Country Check
+      inCountryCheck: "Vérification dans le Pays",
+      inCountryCheckById: "Vérification dans le Pays par ID",
+      individualId: "ID Individuel",
+      nationality: "Nationalité",
+      location: "Emplacement",
+      checkStatus: "Statut de Vérification",
+      active: "Actif",
+      inactive: "Inactif",
+      
+      // Visa Applications
+      visaApplications: "Demandes de Visa",
+      businessVisas: "Visas d'Affaires",
+      studentVisas: "Visas Étudiants",
+      touristVisas: "Visas Touristiques",
+      businessVisaApplications: "Demandes de Visa d'Affaires",
+      studentVisaApplications: "Demandes de Visa Étudiant",
+      touristVisaApplications: "Demandes de Visa Touristique",
+      
+      // Contacts
+      contacts: "Contacts",
+      contactManagement: "Gestion des Contacts",
+      addContact: "Ajouter Contact",
+      contactList: "Liste des Contacts",
+      phone: "Téléphone",
+      
+      // Common actions
+      filterByName: "Filtrer par Nom",
+      filterById: "Filtrer par ID",
+      noDataFound: "Aucune donnée trouvée",
+      loading: "Chargement...",
+      save: "Sauvegarder",
+      cancel: "Annuler",
+      confirm: "Confirmer",
+      close: "Fermer"
     }
   }
 };
