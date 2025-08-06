@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Building2, Eye, EyeOff } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import equatorialGuineaFlag from "@/assets/equatorial-guinea-flag.svg";
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -13,6 +15,7 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
+  const { t } = useTranslation();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,27 +45,33 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-embassy-navy to-embassy-blue flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-guinea-green via-guinea-blue to-embassy-navy flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
-            <Building2 className="h-12 w-12 text-embassy-gold" />
+            <img 
+              src={equatorialGuineaFlag} 
+              alt="Equatorial Guinea Flag" 
+              className="h-20 w-32 object-cover rounded-lg border-2 border-white shadow-2xl"
+            />
           </div>
-          <h1 className="text-3xl font-bold text-white">Embassy Admin</h1>
-          <p className="text-embassy-blue mt-2">Secure Administrative Portal</p>
+          <h1 className="text-3xl font-bold text-white drop-shadow-lg">
+            República de Guinea Ecuatorial
+          </h1>
+          <p className="text-guinea-yellow mt-2 font-medium drop-shadow">Embassy Administration</p>
         </div>
 
-        <Card className="shadow-2xl">
+        <Card className="shadow-2xl border-0 bg-card/95 backdrop-blur">
           <CardHeader>
-            <CardTitle>Sign In</CardTitle>
-            <CardDescription>
-              Enter your credentials to access the admin panel
+            <CardTitle className="text-center text-foreground">{t('login')}</CardTitle>
+            <CardDescription className="text-center text-muted-foreground">
+              {t('login')} - Administration Panel
             </CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">{t('email')}</Label>
                 <Input
                   id="email"
                   type="email"
@@ -70,19 +79,21 @@ export default function Login() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
+                  className="bg-background"
                 />
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="password">Password</Label>
+                <Label htmlFor="password">{t('password')}</Label>
                 <div className="relative">
                   <Input
                     id="password"
                     type={showPassword ? "text" : "password"}
-                    placeholder="Enter your password"
+                    placeholder={t('password')}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
+                    className="bg-background"
                   />
                   <Button
                     type="button"
@@ -102,27 +113,27 @@ export default function Login() {
 
               <Button 
                 type="submit" 
-                className="w-full bg-embassy-navy hover:bg-embassy-navy/90" 
+                className="w-full bg-primary hover:bg-primary/90" 
                 disabled={isLoading}
               >
-                {isLoading ? "Signing in..." : "Sign In"}
+                {isLoading ? "..." : t('signIn')}
               </Button>
             </form>
 
             <div className="mt-4 text-center space-y-2">
               <Link 
                 to="/forgot-password" 
-                className="text-sm text-embassy-blue hover:underline"
+                className="text-sm text-primary hover:underline"
               >
-                Forgot your password?
+                {t('forgotPassword')}
               </Link>
               <div>
-                <span className="text-sm text-muted-foreground">Don't have an account? </span>
+                <span className="text-sm text-muted-foreground">{t('dontHaveAccount')} </span>
                 <Link 
                   to="/signup" 
-                  className="text-sm text-embassy-blue hover:underline font-medium"
+                  className="text-sm text-primary hover:underline font-medium"
                 >
-                  Sign up
+                  {t('signup')}
                 </Link>
               </div>
             </div>

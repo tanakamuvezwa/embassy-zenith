@@ -59,6 +59,13 @@ export default {
 					neutral: 'hsl(var(--embassy-neutral))',
 					light: 'hsl(var(--embassy-light))'
 				},
+				guinea: {
+					green: 'hsl(var(--guinea-green))',
+					white: 'hsl(var(--guinea-white))',
+					red: 'hsl(var(--guinea-red))',
+					blue: 'hsl(var(--guinea-blue))',
+					yellow: 'hsl(var(--guinea-yellow))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',

@@ -10,6 +10,7 @@ import Dashboard from "./pages/Dashboard";
 import VisaInfo from "./pages/VisaInfo";
 import Articles from "./pages/Articles";
 import ArticleEditor from "./pages/ArticleEditor";
+import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/articles" element={<Articles />} />
           <Route path="/articles/new" element={<ArticleEditor />} />
           <Route path="/articles/edit/:id" element={<ArticleEditor />} />
+          <Route path="/settings" element={<Settings />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

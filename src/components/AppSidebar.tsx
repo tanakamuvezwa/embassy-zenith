@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { 
   LayoutDashboard, 
   FileText, 
@@ -20,18 +21,19 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 
-const menuItems = [
-  { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
-  { title: "Visa Applications", url: "/visa-info", icon: Users },
-  { title: "Articles", url: "/articles", icon: FileText },
-  { title: "Settings", url: "/settings", icon: Settings },
-];
-
 export function AppSidebar() {
   const { state } = useSidebar();
   const location = useLocation();
+  const { t } = useTranslation();
   const currentPath = location.pathname;
   const collapsed = state === "collapsed";
+
+  const menuItems = [
+    { title: t("dashboard"), url: "/dashboard", icon: LayoutDashboard },
+    { title: t("visaInfo"), url: "/visa-info", icon: Users },
+    { title: t("articles"), url: "/articles", icon: FileText },
+    { title: t("settings"), url: "/settings", icon: Settings },
+  ];
 
   const isActive = (path: string) => currentPath === path;
   const getNavCls = ({ isActive }: { isActive: boolean }) =>
@@ -54,7 +56,7 @@ export function AppSidebar() {
 
         <SidebarGroup>
           <SidebarGroupLabel className="text-embassy-blue font-medium px-4 py-2">
-            Main Navigation
+            {!collapsed && "Main Navigation"}
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
@@ -85,7 +87,7 @@ export function AppSidebar() {
           <SidebarMenuButton asChild>
             <button className="flex items-center space-x-3 px-4 py-2 text-white hover:bg-embassy-blue/20 transition-colors w-full">
               <LogOut className="h-5 w-5" />
-              {!collapsed && <span>Logout</span>}
+              {!collapsed && <span>{t('logout')}</span>}
             </button>
           </SidebarMenuButton>
         </div>

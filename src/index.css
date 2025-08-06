@@ -39,6 +39,13 @@
     --embassy-gold: 45 93% 47%;
     --embassy-neutral: 215 16% 47%;
     --embassy-light: 214 32% 95%;
+    
+    /* Equatorial Guinea Flag Colors */
+    --guinea-green: 150 100% 30%;
+    --guinea-white: 0 0% 100%;
+    --guinea-red: 0 100% 45%;
+    --guinea-blue: 220 100% 35%;
+    --guinea-yellow: 48 100% 50%;
 
     --radius: 0.5rem;
 
