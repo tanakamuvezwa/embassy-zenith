@@ -12,6 +12,13 @@ import Articles from "./pages/Articles";
 import ArticleEditor from "./pages/ArticleEditor";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
+import Employees from "./pages/Employees";
+import Recruitment from "./pages/Recruitment";
+import InCountryCheck from "./pages/InCountryCheck";
+import BusinessVisas from "./pages/BusinessVisas";
+import StudentVisas from "./pages/StudentVisas";
+import TouristVisas from "./pages/TouristVisas";
+import Contacts from "./pages/Contacts";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +38,13 @@ const App = () => (
           <Route path="/articles/new" element={<ArticleEditor />} />
           <Route path="/articles/edit/:id" element={<ArticleEditor />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="/employees" element={<Employees />} />
+          <Route path="/employees/recruitment" element={<Recruitment />} />
+          <Route path="/in-country-check" element={<InCountryCheck />} />
+          <Route path="/visa-applications/business" element={<BusinessVisas />} />
+          <Route path="/visa-applications/student" element={<StudentVisas />} />
+          <Route path="/visa-applications/tourist" element={<TouristVisas />} />
+          <Route path="/contacts" element={<Contacts />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
