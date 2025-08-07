@@ -10,10 +10,10 @@ import {
 import { Button } from "@/components/ui/button";
 
 const languages = [
-  { code: 'en', name: 'English', flag: '🇺🇸' },
-  { code: 'es', name: 'Español', flag: '🇪🇸' },
-  { code: 'tr', name: 'Türkçe', flag: '🇹🇷' },
-  { code: 'fr', name: 'Français', flag: '🇫🇷' },
+  { code: 'en', name: 'English', flag: '🇺🇸', shortCode: 'EN' },
+  { code: 'es', name: 'Español', flag: '🇪🇸', shortCode: 'ES' },
+  { code: 'tr', name: 'Türkçe', flag: '🇹🇷', shortCode: 'TR' },
+  { code: 'fr', name: 'Français', flag: '🇫🇷', shortCode: 'FR' },
 ];
 
 export function LanguageSelector() {
@@ -28,21 +28,25 @@ export function LanguageSelector() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" className="relative">
-          <Languages className="h-5 w-5" />
+        <Button variant="ghost" className="h-8 px-3 text-sm font-medium hover:bg-accent hover:text-accent-foreground">
+          <span className="text-base mr-1">{currentLanguage.flag}</span>
+          {currentLanguage.shortCode}
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56 bg-popover border border-border shadow-lg" align="end">
+      <DropdownMenuContent className="w-48 bg-popover border border-border shadow-lg" align="end">
         {languages.map((language) => (
           <DropdownMenuItem
             key={language.code}
             onClick={() => changeLanguage(language.code)}
-            className={`flex items-center space-x-2 cursor-pointer hover:bg-accent hover:text-accent-foreground ${
+            className={`flex items-center space-x-3 cursor-pointer hover:bg-accent hover:text-accent-foreground ${
               i18n.language === language.code ? 'bg-accent text-accent-foreground' : ''
             }`}
           >
             <span className="text-lg">{language.flag}</span>
-            <span>{language.name}</span>
+            <div className="flex flex-col">
+              <span className="font-medium">{language.shortCode}</span>
+              <span className="text-xs text-muted-foreground">{language.name}</span>
+            </div>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

@@ -14,6 +14,7 @@ import {
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { LanguageSelector } from "./LanguageSelector";
+import { GlobalSearch } from "./GlobalSearch";
 import equatorialGuineaFlag from "@/assets/equatorial-guinea-flag.svg";
 
 export function TopNavbar() {
@@ -39,13 +40,7 @@ export function TopNavbar() {
           </div>
         </div>
         
-        <div className="relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
-          <Input 
-            placeholder={t('searchPlaceholder')}
-            className="pl-10 w-80 bg-background"
-          />
-        </div>
+        <GlobalSearch />
       </div>
 
       <div className="flex items-center space-x-3">

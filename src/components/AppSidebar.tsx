@@ -14,7 +14,8 @@ import {
   Globe, // Icon for Tourist Visas
   LogOut,
   UserPlus, // Icon for Recruitment
-  Contact // Icon for Contacts
+  Contact, // Icon for Contacts
+  CalendarDays // Icon for Appointments
 } from 'lucide-react';
 import {
   Sidebar,
@@ -64,6 +65,7 @@ export function AppSidebar() {
   const additionalMenuItems = [
     { title: t("inCountryCheck"), url: "/in-country-check", icon: UserCheck },
     { title: t("contacts"), url: "/contacts", icon: Contact },
+    { title: "Appointments", url: "/appointments", icon: CalendarDays },
   ];
 
   const isActive = (path: string) => currentPath === path;

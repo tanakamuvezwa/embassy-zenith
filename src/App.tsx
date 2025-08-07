@@ -19,6 +19,7 @@ import BusinessVisas from "./pages/BusinessVisas";
 import StudentVisas from "./pages/StudentVisas";
 import TouristVisas from "./pages/TouristVisas";
 import Contacts from "./pages/Contacts";
+import Appointments from "./pages/Appointments";
 
 const queryClient = new QueryClient();
 
@@ -45,6 +46,7 @@ const App = () => (
           <Route path="/visa-applications/student" element={<StudentVisas />} />
           <Route path="/visa-applications/tourist" element={<TouristVisas />} />
           <Route path="/contacts" element={<Contacts />} />
+          <Route path="/appointments" element={<Appointments />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
